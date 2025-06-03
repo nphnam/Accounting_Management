@@ -9,7 +9,6 @@ import {
     KBarSearch
 } from 'kbar';
 import { useRouter } from 'next/navigation';
-import { ReactNode, useEffect, useState } from 'react';
 import { useMemo } from 'react';
 import RenderResults from './render-result';
 
@@ -62,8 +61,9 @@ export default function KBar({ children }: { children: React.ReactNode }) {
     );
 }
 
-function KBarComponent({ children }: { children: ReactNode }) {
+function KBarComponent({ children }: { children: React.ReactNode }) {
     return (
+        <>
         <KBarPortal>
             <KBarPositioner className='bg-background/80 fixed inset-0 z-99999 p-0! backdrop-blur-sm'>
                 <KBarAnimator className='bg-card text-card-foreground relative mt-64! w-full max-w-[600px] -translate-y-12! overflow-hidden rounded-lg border shadow-lg'>
@@ -75,7 +75,9 @@ function KBarComponent({ children }: { children: ReactNode }) {
                     </div>
                 </KBarAnimator>
             </KBarPositioner>
-        </KBarPortal>
+            </KBarPortal>
+            {children}
+        </>
     );
 }
 

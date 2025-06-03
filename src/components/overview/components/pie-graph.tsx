@@ -12,12 +12,8 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card';
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent
-} from '@/components/ui/chart';
+import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
+
 
 const chartData = [
   { browser: 'chrome', visitors: 275, fill: 'var(--primary)' },
@@ -148,6 +144,7 @@ export function PieGraph() {
           </PieChart>
         </ChartContainer>
       </CardContent>
+      
       <CardFooter className='flex-col gap-2 text-sm'>
         <div className='flex items-center gap-2 leading-none font-medium'>
           Chrome leads with{' '}

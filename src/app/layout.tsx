@@ -9,6 +9,7 @@ import './theme.css';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import { Suspense } from 'react';
 import { Toaster } from 'sonner';
+import { ActiveThemeProvider } from '@/components/active-theme';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -26,6 +27,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <ActiveThemeProvider initialTheme="default">
             <AuthProvider>
               <Suspense>
                 <NuqsAdapter>
@@ -35,6 +37,7 @@ export default function RootLayout({
                 </NuqsAdapter>
               </Suspense>
             </AuthProvider>
+          </ActiveThemeProvider>
         </ThemeProvider>
       </body>
     </html>
